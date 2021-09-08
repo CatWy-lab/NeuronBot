@@ -6,3 +6,4 @@ aiofile
 aiohttp
 pydantic
 watchgod
+async_generator
