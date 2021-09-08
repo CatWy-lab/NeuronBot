@@ -4,3 +4,4 @@ ujson
 environs
 aiofile
 aiohttp
+pydantic
