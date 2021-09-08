@@ -3,3 +3,4 @@ python-dotenv
 ujson
 environs
 aiofile
+aiohttp
