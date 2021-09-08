@@ -7,4 +7,5 @@ aiohttp
 pydantic
 watchgod
 async_generator
+aio_pika
 contextvars
