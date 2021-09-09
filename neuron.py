@@ -9,7 +9,7 @@ async def write_words(*args):
     text, file = args
     async with AIOFile(file, "a", encoding="utf-8") as f:
         text = text.replace("\n", ". ").replace("\n\n", ". ")
-        await f.write(text + " ")
+        await f.write(text + ",")
 
 
 async def send_and_gen_sentence(*args):
