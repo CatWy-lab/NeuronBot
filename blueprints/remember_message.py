@@ -11,7 +11,7 @@ bp = Blueprint()
 async def undefined(message: types.Message, _):
     if message.action is not None and message.action.type == "chat_invite_user":
         return
-    if random.randint(0, 33) == 24 and RANDOM_SEND:
+    if random.randint(0, 100) < 70 and RANDOM_SEND:
         await send_and_gen_sentence(
             f"dialogs/dialogs{message.peer_id}.txt", message.peer_id
         )
