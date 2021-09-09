@@ -22,7 +22,7 @@ async def send_and_gen_sentence(*args):
         return
     async with AIOFile(file, encoding="utf-8") as f:
         text = await f.read()
-        text_model = [sample.strip() for sample in text.split(",")]
+        text_model = [sample.strip() for sample in text.split(" ")]
     generator = mc.StringGenerator(samples=text_model)
     message = generator.generate_string(
         attempts=100,
