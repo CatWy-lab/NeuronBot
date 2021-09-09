@@ -25,12 +25,12 @@ async def send_and_gen_sentence(*args):
         text_model = [sample.strip() for sample in text.split(",")]
     generator = mc.StringGenerator(samples=text_model)
     message = generator.generate_string(
-        attempts=20,
-        validator=mc.validators.words_count(minimal=1, maximal=15),
+        attempts=100,
+        validator=mc.validators.words_count(minimal=3, maximal=15),
         formatter=mc.formatters.usual_syntax if USUAL_SYNTAX else None,
     )
     if not message:
-        message = "База слов слишком мала для генерации"
+        message = "пидр"
     await get_api().messages.send(
         peer_id=peer_id, message=message, random_id=0
     )
