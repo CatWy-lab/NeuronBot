@@ -9,7 +9,7 @@ async def write_words(*args):
     text, file = args
     async with AIOFile(file, "a", encoding="utf-8") as f:
         text = text.replace("\n", ". ").replace("\n\n", ". ")
-        await f.write(text + ",")
+        await f.write(text + " ")
 
 
 async def send_and_gen_sentence(*args):
@@ -22,7 +22,7 @@ async def send_and_gen_sentence(*args):
         return
     async with AIOFile(file, encoding="utf-8") as f:
         text = await f.read()
-        text_model = [sample.strip() for sample in text.split(" ")]
+        text_model = [sample.strip() for sample in text.split(",")]
     generator = mc.StringGenerator(samples=text_model)
     message = generator.generate_string(
         attempts=100,
