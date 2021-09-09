@@ -30,7 +30,7 @@ async def send_and_gen_sentence(*args):
         formatter=mc.formatters.usual_syntax if USUAL_SYNTAX else None,
     )
     if not message:
-        message = "пидр"
+        message = "База слов мала"
     await get_api().messages.send(
         peer_id=peer_id, message=message, random_id=0
     )
