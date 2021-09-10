@@ -15,13 +15,5 @@ async def undefined(message: types.Message, _):
         await send_and_gen_sentence(
             f"dialogs/dialogs{message.peer_id}.txt", message.peer_id
         )
-        if random.randint(0, 100) < 50:
-            await send_and_gen_sentence(
-                f"dialogs/dialogs{message.peer_id}.txt", message.peer_id
-            )
-            if random.randint(0, 100) < 25:
-                await send_and_gen_sentence(
-                    f"dialogs/dialogs{message.peer_id}.txt", message.peer_id
-                )
 
     await write_words(message.text, f"dialogs/dialogs{message.peer_id}.txt")
