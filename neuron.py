@@ -26,7 +26,7 @@ async def send_and_gen_sentence(*args):
     generator = mc.StringGenerator(samples=text_model)
     message = generator.generate_string(
         attempts=20,
-        validator=mc.validators.words_count(minimal=3, maximal=15),
+        validator=mc.validators.words_count(minimal=1, maximal=15),
         formatter=mc.formatters.usual_syntax if USUAL_SYNTAX else None,
     )
     if not message:
